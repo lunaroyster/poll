@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <settings>
+        <!--  -->
+    </settings>
+    <profile>
+        <post name="">
+            <candidate name="">
+                <description></description>
+                <image></image>
+            </candidate>
+        </post>
+    </profile>
+</configuration>

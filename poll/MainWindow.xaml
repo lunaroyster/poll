@@ -8,10 +8,10 @@
         Title="MainWindow" Background="#FF3F3F46" BorderBrush="#FF3F3F46" Foreground="White" WindowStyle="None" WindowState="Maximized" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}">
     <Grid Margin="0,0,2,2">
         <Grid.RowDefinitions>
-            <RowDefinition Height="275*"/>
-            <RowDefinition Height="42*"/>
+            <RowDefinition Height="120*"/>
+            <RowDefinition Height="19*"/>
         </Grid.RowDefinitions>
-        <Grid HorizontalAlignment="Left" Height="42" Grid.Row="1" VerticalAlignment="Top" Width="515">
+        <Grid Grid.Row="1" HorizontalAlignment="Right" Width="406">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="24*"/>
