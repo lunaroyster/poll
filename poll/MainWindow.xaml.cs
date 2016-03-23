@@ -44,11 +44,13 @@ namespace poll
             string ConfigXML = File.ReadAllText(fd.FileName);
             using (XmlReader reader = XmlReader.Create(new StringReader(ConfigXML)))
             {
-                
+
             }
         }
-        
 
-        
+        private void Uplink(string message)
+        {
+
+        }
     }
 }
