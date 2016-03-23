@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using System.Xml;
+using Microsoft.Win32;
 
 
 namespace poll
@@ -27,23 +28,27 @@ namespace poll
         {
             InitializeComponent();
         }
-
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Window_ContentRendered(object sender, EventArgs e)
         {
             LoadConfig();
         }
         private void LoadConfig()
         {
-            string ConfigXML = ReadConfig();
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.DefaultExt = ".xml";
+            fd.InitialDirectory = Directory.GetCurrentDirectory();
+            fd.Filter = "XML files (.xml)|*.xml";
+            fd.Multiselect = false;
+            Nullable<bool> result = fd.ShowDialog();
+
+            string ConfigXML = File.ReadAllText(XMLpath);
             using (XmlReader reader = XmlReader.Create(new StringReader(ConfigXML)))
             {
 
             }
         }
-        private string ReadConfig()
-        {
-            string x;
-            return x;
-        }
+        
+
+        
     }
 }
