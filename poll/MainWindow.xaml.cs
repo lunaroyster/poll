@@ -12,6 +12,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
+using System.Xml;
+
 
 namespace poll
 {
@@ -23,6 +26,24 @@ namespace poll
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            LoadConfig();
+        }
+        private void LoadConfig()
+        {
+            string ConfigXML = ReadConfig();
+            using (XmlReader reader = XmlReader.Create(new StringReader(ConfigXML)))
+            {
+
+            }
+        }
+        private string ReadConfig()
+        {
+            string x;
+            return x;
         }
     }
 }

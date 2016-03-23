@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:poll"
         mc:Ignorable="d"
-        Title="MainWindow" Background="#FF3F3F46" BorderBrush="#FF3F3F46" Foreground="White" WindowStyle="None" WindowState="Maximized" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}">
-    <Grid Margin="0,0,2,2">
+        Title="MainWindow" Background="#FF3F3F46" BorderBrush="#FF3F3F46" Foreground="White" WindowStyle="None" WindowState="Maximized" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" Loaded="Window_Loaded">
+    <Grid Margin="0,0,2,2" Loaded="Grid_Loaded">
         <Grid.RowDefinitions>
             <RowDefinition Height="120*"/>
             <RowDefinition Height="19*"/>
