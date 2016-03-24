@@ -41,8 +41,8 @@ namespace poll
             fd.Multiselect = false;
             Nullable<bool> result = fd.ShowDialog();
 
-            string ConfigXML = File.ReadAllText(fd.FileName);
-            using (XmlReader reader = XmlReader.Create(new StringReader(ConfigXML)))
+            string ConfigFile = File.ReadAllText(fd.FileName);
+            using (XmlReader reader = XmlReader.Create(new StringReader(ConfigFile)))
             {
 
             }

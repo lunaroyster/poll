@@ -25,4 +25,20 @@ namespace monitor
             InitializeComponent();
         }
     }
+    public class StatusButton : Button
+    {
+        public bool status
+        {
+            get
+            {
+                return status;
+            }
+            set
+            {
+                if (status == true) {}
+                status = value;
+                
+            }
+        }
+    }
 }
