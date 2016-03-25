@@ -23,6 +23,8 @@ namespace poll
         class Candidate
         {
             string name;
+            string description;
+            string imageURL;
             public string Name
             {
                 get
@@ -34,6 +36,7 @@ namespace poll
                     name = value;
                 }
             }
+            
         }
     }
 }
