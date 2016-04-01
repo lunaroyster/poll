@@ -10,11 +10,17 @@ namespace poll
     {
         public bool isInitialized;
         string PostName;
+        private Candidate[] cand;
         public Post(string name)
         {
             Name = name;
             isInitialized = true;
         }
+        public void Vote(int CandidateNumber)
+        {
+            cand[CandidateNumber].VoteCount += 1;
+        }
+
         public string Name
         {
             get
@@ -26,6 +32,7 @@ namespace poll
                 PostName = value;
             }
         }
+
         class Candidate
         {
             string CandidateName;
@@ -47,6 +54,7 @@ namespace poll
             {
                 Name = name;
             }
+            public int VoteCount; //Change with demographic system
         }
         
     }
