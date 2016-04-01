@@ -28,21 +28,25 @@ namespace poll
         }
         class Candidate
         {
-            string name;
+            string CandidateName;
             string description;
             string imageURL;
+            public bool isInitialized;
             public string Name
             {
                 get
                 {
-                    return name != null ? name : "Unnamed";
+                    return CandidateName != null ? CandidateName : "Unnamed";
                 }
                 set
                 {
-                    name = value;
+                    CandidateName = value;
                 }
             }
-            
+            public Candidate(string name)
+            {
+                Name = name;
+            }
         }
         
     }
