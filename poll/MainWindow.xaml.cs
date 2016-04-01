@@ -44,7 +44,10 @@ namespace poll
             string ConfigFile = File.ReadAllText(fd.FileName);
             using (XmlReader reader = XmlReader.Create(new StringReader(ConfigFile)))
             {
+                while (true)
+                {
 
+                }
             }
         }
 

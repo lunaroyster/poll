@@ -6,18 +6,24 @@ using System.Threading.Tasks;
 
 namespace poll
 {
-    class Post
+    public class Post
     {
-        string name;
+        public bool isInitialized;
+        string PostName;
+        public Post(string name)
+        {
+            Name = name;
+            isInitialized = true;
+        }
         public string Name
         {
             get
             {
-                return name != null ? name : "Unassigned";
+                return PostName != null ? PostName : "Unassigned";
             }
             set
             {
-                name = value;
+                PostName = value;
             }
         }
         class Candidate
@@ -38,5 +44,6 @@ namespace poll
             }
             
         }
+        
     }
 }
