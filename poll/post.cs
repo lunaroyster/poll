@@ -10,7 +10,9 @@ namespace poll
     {
         public bool isInitialized;
         string PostName;
-        private Candidate[] cand;
+        
+        public List<Candidate> cand = new List<Candidate>();
+
         public Post(string name)
         {
             Name = name;
@@ -18,7 +20,7 @@ namespace poll
         }
         public void Vote(int CandidateNumber)
         {
-            cand[CandidateNumber].VoteCount += 1;
+            
         }
 
         public string Name
@@ -33,7 +35,14 @@ namespace poll
             }
         }
 
-        class Candidate
+        //public void AddCandidate(string CandidateName)
+        //{
+        //    Candidate c = new Candidate();
+        //    c.Name = CandidateName;
+        //    cand.Add(c);
+        //}
+
+        public class Candidate
         {
             string CandidateName;
             string description;
@@ -50,9 +59,10 @@ namespace poll
                     CandidateName = value;
                 }
             }
-            public Candidate(string name)
+            public Candidate()
             {
-                Name = name;
+                isInitialized = true;
+                //Name = name;
             }
             public int VoteCount; //Change with demographic system
         }

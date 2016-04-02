@@ -27,10 +27,12 @@ namespace poll
         public MainWindow()
         {
             InitializeComponent();
+            
         }
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            LoadConfig();
+            //LoadConfig();
+            test();
         }
         private void LoadConfig()
         {
@@ -54,6 +56,11 @@ namespace poll
         private void Uplink(string message)
         {
 
+        }
+
+        private void test()
+        {
+            List<Post> post = new List<Post>();
         }
     }
 }
