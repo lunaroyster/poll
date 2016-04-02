@@ -61,6 +61,26 @@ namespace poll
         private void test()
         {
             List<Post> post = new List<Post>();
+            for (int i = 0; i < 4; i++)
+            {
+                Post p = new Post(System.DateTime.Now.ToLongTimeString());
+                post.Add(p);
+                for (int j = 0; j < 3; j++)
+                {
+                    Post.Candidate c = new Post.Candidate();
+                    c.Name = System.DateTime.Now.ToLongTimeString();
+                    post[i].cand.Add(c);
+                }
+                
+            }
+            foreach (Post p in post)
+            {
+                MessageBox.Show(p.Name);
+                foreach (Post.Candidate c in p.cand)
+                {
+                    MessageBox.Show(c.Name);
+                }
+            }
         }
     }
 }
