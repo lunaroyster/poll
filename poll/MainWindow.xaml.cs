@@ -32,7 +32,7 @@ namespace poll
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             //LoadConfig();
-            test();
+            //test();
         }
         private void LoadConfig()
         {
@@ -43,14 +43,19 @@ namespace poll
             fd.Multiselect = false;
             Nullable<bool> result = fd.ShowDialog();
 
-            string ConfigFile = File.ReadAllText(fd.FileName);
-            using (XmlReader reader = XmlReader.Create(new StringReader(ConfigFile)))
-            {
-                while (true)
-                {
+            //string ConfigFile = File.ReadAllText(fd.FileName);
+            //using (XmlReader reader = XmlReader.Create(new StringReader(ConfigFile)))
+            //{
+            //    while (true)
+            //    {
 
-                }
-            }
+            //    }
+            //}
+
+            XmlDocument xd = new XmlDocument();
+            xd.Load(fd.FileName);
+
+
         }
 
         private void Uplink(string message)
@@ -58,29 +63,28 @@ namespace poll
 
         }
 
-        private void test()
-        {
-            List<Post> post = new List<Post>();
-            for (int i = 0; i < 4; i++)
-            {
-                Post p = new Post(System.DateTime.Now.ToLongTimeString());
-                post.Add(p);
-                for (int j = 0; j < 3; j++)
-                {
-                    Post.Candidate c = new Post.Candidate();
-                    c.Name = System.DateTime.Now.ToLongTimeString();
-                    post[i].cand.Add(c);
-                }
-                
-            }
-            foreach (Post p in post)
-            {
-                MessageBox.Show(p.Name);
-                foreach (Post.Candidate c in p.cand)
-                {
-                    MessageBox.Show(c.Name);
-                }
-            }
-        }
+        //private void test()
+        //{
+        //    List<Post> post = new List<Post>();
+        //    for (int i = 0; i < 4; i++)
+        //    {
+        //        Post p = new Post(System.DateTime.Now.ToLongTimeString());
+        //        post.Add(p);
+        //        for (int j = 0; j < 3; j++)
+        //        {
+        //            Post.Candidate c = new Post.Candidate();
+        //            c.Name = System.DateTime.Now.ToLongTimeString();
+        //            post[i].cand.Add(c);
+        //        }
+        //    }
+        //    foreach (Post p in post)
+        //    {
+        //        MessageBox.Show(p.Name);
+        //        foreach (Post.Candidate c in p.cand)
+        //        {
+        //            MessageBox.Show(c.Name);
+        //        }
+        //    }
+        //}
     }
 }

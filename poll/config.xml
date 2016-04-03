@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+  
     <settings>
       <color>
         <background></background>
@@ -10,6 +11,7 @@
         
       </password>
     </settings>
+      
     <profile>
         <post name="">
             <candidate name="">
@@ -18,4 +20,5 @@
             </candidate>
         </post>
     </profile>
+
 </configuration>
