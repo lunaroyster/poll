@@ -54,8 +54,11 @@ namespace poll
 
             XmlDocument xd = new XmlDocument();
             xd.Load(fd.FileName);
-
-
+            XmlNodeList PostList = xd.SelectNodes("/configuration/profile/post");
+            foreach (XmlNode postNode in PostList)
+            {
+                postNode.Attributes.GetNamedItem("name").Value;
+            }
         }
 
         private void Uplink(string message)
