@@ -59,10 +59,11 @@ namespace poll
                     CandidateName = value;
                 }
             }
-            public Candidate()
+
+            public Candidate(string name)
             {
                 isInitialized = true;
-                //Name = name;
+                Name = name;
             }
             public int VoteCount; //Change with demographic system
         }

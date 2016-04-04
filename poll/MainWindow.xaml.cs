@@ -19,24 +19,30 @@ using Microsoft.Win32;
 
 namespace poll
 {
+    
+    //  TODO Change value parameters to reference parameters where required
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
+
         #region Declaration
             List<Post> post = new List<Post>();
         #endregion
+
         public MainWindow()
         {
             InitializeComponent();
-            
         }
+
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             LoadConfig();
             //test();
         }
+
         private void LoadConfig()
         {
             OpenFileDialog fd = new OpenFileDialog();
@@ -45,15 +51,6 @@ namespace poll
             fd.Filter = "XML files (.xml)|*.xml";
             fd.Multiselect = false;
             Nullable<bool> result = fd.ShowDialog();
-
-            //string ConfigFile = File.ReadAllText(fd.FileName);
-            //using (XmlReader reader = XmlReader.Create(new StringReader(ConfigFile)))
-            //{
-            //    while (true)
-            //    {
-
-            //    }
-            //}
 
             XmlDocument xd = new XmlDocument();
             xd.Load(fd.FileName);
@@ -64,12 +61,31 @@ namespace poll
                 Post p = new Post(PostName);
                 foreach (XmlNode candidateNode in postNode.ChildNodes)
                 {
-                    MessageBox.Show(candidateNode.Attributes.GetNamedItem("name").Value);
-                    Post.Candidate c = new Post.Candidate();
+                    string CandidateName = candidateNode.Attributes.GetNamedItem("name").Value;
+                    Post.Candidate c = new Post.Candidate(CandidateName);
                     p.cand.Add(c);
                 }
                 post.Add(p);
             }
+        }
+
+        private void LoadGUI()
+        {
+            
+        }
+
+        private Button CandidateButton(Post.Candidate c)
+        {
+            Button b = new Button();
+            //b.Name = ;
+            
+            return b;
+        }
+
+        private WrapPanel PostPanel(Post p)
+        {
+            WrapPanel wp = new WrapPanel();
+            return wp;
         }
 
         private void Uplink(string message)
@@ -77,28 +93,22 @@ namespace poll
 
         }
 
-        //private void test()
-        //{
-        //    List<Post> post = new List<Post>();
-        //    for (int i = 0; i < 4; i++)
-        //    {
-        //        Post p = new Post(System.DateTime.Now.ToLongTimeString());
-        //        post.Add(p);
-        //        for (int j = 0; j < 3; j++)
-        //        {
-        //            Post.Candidate c = new Post.Candidate();
-        //            c.Name = System.DateTime.Now.ToLongTimeString();
-        //            post[i].cand.Add(c);
-        //        }
-        //    }
-        //    foreach (Post p in post)
-        //    {
-        //        MessageBox.Show(p.Name);
-        //        foreach (Post.Candidate c in p.cand)
-        //        {
-        //            MessageBox.Show(c.Name);
-        //        }
-        //    }
-        //}
+        private void test()
+        {
+            foreach (Post p in post)
+            {
+                MessageBox.Show(p.Name);
+                foreach (Post.Candidate c in p.cand)
+                {
+                    MessageBox.Show(c.Name);
+                }
+            }
+        }
+
+        private void cast(int postID, int candidateID, int demographicID)
+        {
+            //post[postID].cand[candidateID].
+        }
+
     }
 }
