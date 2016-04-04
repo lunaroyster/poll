@@ -24,6 +24,9 @@ namespace poll
     /// </summary>
     public partial class MainWindow : Window
     {
+        #region Declaration
+            List<Post> post = new List<Post>();
+        #endregion
         public MainWindow()
         {
             InitializeComponent();
@@ -31,7 +34,7 @@ namespace poll
         }
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            //LoadConfig();
+            LoadConfig();
             //test();
         }
         private void LoadConfig()
@@ -54,10 +57,18 @@ namespace poll
 
             XmlDocument xd = new XmlDocument();
             xd.Load(fd.FileName);
-            XmlNodeList PostList = xd.SelectNodes("/configuration/profile/post");
-            foreach (XmlNode postNode in PostList)
+            XmlNodeList PostNodeList = xd.SelectNodes("/configuration/profile/post");
+            foreach (XmlNode postNode in PostNodeList)
             {
-                postNode.Attributes.GetNamedItem("name").Value;
+                string PostName = postNode.Attributes.GetNamedItem("name").Value;
+                Post p = new Post(PostName);
+                foreach (XmlNode candidateNode in postNode.ChildNodes)
+                {
+                    MessageBox.Show(candidateNode.Attributes.GetNamedItem("name").Value);
+                    Post.Candidate c = new Post.Candidate();
+                    p.cand.Add(c);
+                }
+                post.Add(p);
             }
         }
 
