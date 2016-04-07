@@ -71,14 +71,14 @@ namespace poll
 
         private void LoadGUI()
         {
-            foreach (Post p in post)
-            {
-                PositionOnGUI(PostPanel(p));
-                foreach (Post.Candidate c in p.cand)
-                {
-                    PositionOnGUI(CandidateButton(c));
-                }
-            }
+            //foreach (Post p in post)
+            //{
+            //    PositionOnGUI(PostPanel(p));
+            //    foreach (Post.Candidate c in p.cand)
+            //    {
+            //        PositionOnGUI(CandidateButton(c));
+            //    }
+            //}
         }
 
         private Button CandidateButton(Post.Candidate c)
