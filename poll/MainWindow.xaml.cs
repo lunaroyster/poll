@@ -40,7 +40,7 @@ namespace poll
         private void Window_ContentRendered(object sender, EventArgs e)
         {
             LoadConfig();
-            //test();
+            LoadGUI();
         }
 
         private void LoadConfig()
@@ -71,14 +71,7 @@ namespace poll
 
         private void LoadGUI()
         {
-            //foreach (Post p in post)
-            //{
-            //    PositionOnGUI(PostPanel(p));
-            //    foreach (Post.Candidate c in p.cand)
-            //    {
-            //        PositionOnGUI(CandidateButton(c));
-            //    }
-            //}
+            lel.LoadOptions(post[1]);
         }
 
         private Button CandidateButton(Post.Candidate c)

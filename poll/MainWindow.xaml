@@ -17,6 +17,7 @@
                 <ColumnDefinition Width="24*"/>
             </Grid.ColumnDefinitions>
         </Grid>
+        <local:PostGrid x:Name="lel" HorizontalAlignment="Left" Margin="118,104,0,0" VerticalAlignment="Top" Width="402"/>
 
 
     </Grid>
