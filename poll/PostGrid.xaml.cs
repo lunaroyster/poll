@@ -24,11 +24,16 @@ namespace poll
         {
             InitializeComponent();
         }
-        public void LoadOptions()
+        public void LoadOptions(Post p)
         {
-
+            foreach (Post.Candidate c in p.cand)
+            {
+                PostButton pb = new PostButton();
+                pb.Height = 50;
+                pb.Width = (CandidateWrapPanel.ActualWidth / 2);
+                pb.Content = c.Name;
+                this.CandidateWrapPanel.Children.Add(pb);
+            }
         }
-
     }
-
 }
