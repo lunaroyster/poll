@@ -76,7 +76,7 @@ namespace poll
             {
                 PostGrid pg = new PostGrid();
                 PostStackPanel.Children.Add(pg);
-                pg.Width = 406;                
+                pg.Width = 300;                
                 pg.LoadOptions(p);
             }
         }

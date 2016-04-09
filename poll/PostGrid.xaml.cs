@@ -29,8 +29,10 @@ namespace poll
             foreach (Post.Candidate c in p.cand)
             {
                 PostButton pb = new PostButton();
-                pb.Height = 50;
-                pb.Width = (CandidateWrapPanel.ActualWidth / 2);
+                pb.Height = 100;
+                pb.Width = 100;
+                Thickness t = new Thickness(5, 5, 5, 5);
+                pb.Margin = t;
                 pb.Content = c.Name;
                 this.CandidateWrapPanel.Children.Add(pb);
             }
