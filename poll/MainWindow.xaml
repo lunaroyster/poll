@@ -17,7 +17,6 @@
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="24*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="button" Content="Button" Margin="10"/>
         </Grid>
         <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"/>
 

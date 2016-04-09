@@ -82,13 +82,6 @@ namespace poll
             }
         }
 
-        private Button CandidateButton(Post.Candidate c)
-        {
-            Button b = new Button();
-            //b.Name = ;
-            return b;
-        }
-
         private WrapPanel PostPanel(Post p)
         {
             WrapPanel wp = new WrapPanel();
@@ -102,14 +95,7 @@ namespace poll
 
         private void test()
         {
-            foreach (Post p in post)
-            {
-                MessageBox.Show(p.Name);
-                foreach (Post.Candidate c in p.cand)
-                {
-                    MessageBox.Show(c.Name);
-                }
-            }
+            
         }
 
         private void cast(int postID, int candidateID, int demographicID)

@@ -59,6 +59,5 @@ namespace poll
                 UpdateActivation();
             }
         }
-        
     }
 }

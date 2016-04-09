@@ -31,10 +31,9 @@ namespace poll
                 PostButton pb = new PostButton();
                 pb.Height = 100;
                 pb.Width = 100;
-                Thickness t = new Thickness(5, 5, 5, 5);
-                pb.Margin = t;
+                pb.Margin = new Thickness(5, 5, 5, 5);
                 pb.Content = c.Name;
-                this.CandidateWrapPanel.Children.Add(pb);
+                CandidateWrapPanel.Children.Add(pb);
             }
         }
     }
