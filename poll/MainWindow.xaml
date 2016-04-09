@@ -8,16 +8,17 @@
         Title="MainWindow" Background="#FF3F3F46" BorderBrush="#FF3F3F46" Foreground="White" WindowStyle="None" WindowState="Maximized" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" ContentRendered="Window_ContentRendered">
     <Grid x:Name="maingrid" Margin="0,0,2,2">
         <Grid.RowDefinitions>
-            <RowDefinition Height="120*"/>
-            <RowDefinition Height="19*"/>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="558*"/>
+            <RowDefinition Height="95*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1" HorizontalAlignment="Right" Width="406">
+        <Grid Grid.Row="2" HorizontalAlignment="Right" Width="406">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="24*"/>
             </Grid.ColumnDefinitions>
         </Grid>
-        <StackPanel x:Name="PostStackPanel" Margin="10" Orientation="Horizontal"/>
+        <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" Height="0" VerticalAlignment="Top"/>
 
 
     </Grid>

@@ -76,7 +76,8 @@ namespace poll
             {
                 PostGrid pg = new PostGrid();
                 PostStackPanel.Children.Add(pg);
-                pg.Width = 300;                
+                pg.Width = 300;
+                pg.Margin = new Thickness(5, 5, 5, 5);
                 pg.LoadOptions(p);
             }
         }
@@ -85,7 +86,6 @@ namespace poll
         {
             Button b = new Button();
             //b.Name = ;
-            
             return b;
         }
 
