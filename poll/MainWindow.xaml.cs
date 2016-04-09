@@ -71,7 +71,14 @@ namespace poll
 
         private void LoadGUI()
         {
-            lel.LoadOptions(post[1]);
+            //lel.LoadOptions(post[1]);
+            foreach (Post p in post)
+            {
+                PostGrid pg = new PostGrid();
+                PostStackPanel.Children.Add(pg);
+                pg.Width = 406;                
+                pg.LoadOptions(p);
+            }
         }
 
         private Button CandidateButton(Post.Candidate c)
