@@ -32,7 +32,8 @@ namespace poll
             List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
-            public static int ButtonHeight = 5;
+            public static int ButtonHeight = 128;
+            public int WrapButtonCount = 2;
         #endregion
 
         public MainWindow()
@@ -74,13 +75,12 @@ namespace poll
 
         private void LoadGUI()
         {
-            //lel.LoadOptions(post[1]);
             foreach (Post p in post)
             {
                 PostGrid pg = new PostGrid();
                 PostStackPanel.Children.Add(pg);
-                pg.CandidateWrapPanel.Width = 2 * ButtonWidth + 4 * ButtonMargin;
-                pg.Margin = new Thickness(5, 5, 5, 5);
+                pg.CandidateWrapPanel.Width = WrapButtonCount * (ButtonWidth + 2 * ButtonMargin);
+                pg.Margin = new Thickness(ButtonMargin);
                 pg.LoadOptions(p);
             }
         }
