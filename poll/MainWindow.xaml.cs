@@ -96,10 +96,11 @@ namespace poll
 
         }
 
-        private void test()
+        private string TimeStamp()
         {
-            
+            return DateTime.Now.ToLongTimeString();
         }
+        
 
         private void cast(int postID, int candidateID, int demographicID)
         {
