@@ -32,6 +32,7 @@ namespace poll
             List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
+            public static int ButtonHeight = 5;
         #endregion
 
         public MainWindow()

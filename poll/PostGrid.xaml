@@ -6,5 +6,5 @@
              xmlns:local="clr-namespace:poll"
              mc:Ignorable="d" 
              d:DesignHeight="221.918" BorderBrush="White" BorderThickness="1" d:DesignWidth="359">
-    <WrapPanel x:Name="CandidateWrapPanel" Margin="10"/>
+    <WrapPanel x:Name="CandidateWrapPanel" Margin="5"/>
 </UserControl>

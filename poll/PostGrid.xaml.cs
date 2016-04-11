@@ -19,21 +19,24 @@ namespace poll
     /// Interaction logic for PostGrid.xaml
     /// </summary>
     public partial class PostGrid : UserControl
-    {       
+    {
+        int width = MainWindow.ButtonWidth;
+        int height = MainWindow.ButtonHeight;
+        int margin = MainWindow.ButtonMargin;
         public PostGrid()
         {
             InitializeComponent();
+            CandidateWrapPanel.Margin = new Thickness(margin);
         }
         public void LoadOptions(Post p)
         {
-            int width = MainWindow.ButtonWidth;
-            int margin = MainWindow.ButtonMargin;
+            
             foreach (Post.Candidate c in p.cand)
             {
                 PostButton pb = new PostButton();
-                pb.Height = width;
+                pb.Height = height;
                 pb.Width = width;
-                pb.Margin = new Thickness(margin, margin, margin, margin);
+                pb.Margin = new Thickness(margin);
                 pb.Content = c.Name;
                 CandidateWrapPanel.Children.Add(pb);
             }
