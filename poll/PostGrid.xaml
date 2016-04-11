@@ -5,6 +5,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:poll"
              mc:Ignorable="d" 
-             d:DesignHeight="221.918" d:DesignWidth="429.098" BorderBrush="White" BorderThickness="1">
+             d:DesignHeight="221.918" BorderBrush="White" BorderThickness="1" d:DesignWidth="359">
     <WrapPanel x:Name="CandidateWrapPanel" Margin="10"/>
 </UserControl>

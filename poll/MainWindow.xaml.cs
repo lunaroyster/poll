@@ -30,6 +30,8 @@ namespace poll
 
         #region Declaration
             List<Post> post = new List<Post>();
+            public static int ButtonWidth = 128;
+            public static int ButtonMargin = 5;
         #endregion
 
         public MainWindow()
@@ -76,7 +78,7 @@ namespace poll
             {
                 PostGrid pg = new PostGrid();
                 PostStackPanel.Children.Add(pg);
-                pg.Width = 300;
+                pg.CandidateWrapPanel.Width = 2 * ButtonWidth + 4 * ButtonMargin;
                 pg.Margin = new Thickness(5, 5, 5, 5);
                 pg.LoadOptions(p);
             }

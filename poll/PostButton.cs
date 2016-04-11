@@ -59,5 +59,10 @@ namespace poll
                 UpdateActivation();
             }
         }
+
+        protected override void OnClick()
+        {
+            IsActive = !IsActive;
+        }
     }
 }
