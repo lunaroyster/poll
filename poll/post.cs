@@ -66,6 +66,15 @@ namespace poll
                 Name = name;
             }
             public int VoteCount; //Change with demographic system
+
+
+            public List<Demographic> Demo = new List<Demographic>();
+            public struct Demographic
+            {
+                string DemographicName;
+                int VoteCount;
+            }
+
         }
         
     }

@@ -28,11 +28,11 @@ namespace poll
     public partial class MainWindow : Window
     {
 
-        #region Declaration
+        #region Declarations
             List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
-            public static int ButtonHeight = 128;
+            public static int ButtonHeight = 600;
             public int WrapButtonCount = 2;
         #endregion
 
@@ -54,8 +54,8 @@ namespace poll
             fd.InitialDirectory = Directory.GetCurrentDirectory();
             fd.Filter = "XML files (.xml)|*.xml";
             fd.Multiselect = false;
-            Nullable<bool> result = fd.ShowDialog();
-
+            bool? result = fd.ShowDialog();
+            if (result == false || result == null) { fd.FileName = "D:\\xTemp\\XMLFile1.xml"; }
             XmlDocument xd = new XmlDocument();
             xd.Load(fd.FileName);
             XmlNodeList PostNodeList = xd.SelectNodes("/configuration/profile/post");
