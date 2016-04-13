@@ -82,6 +82,18 @@ namespace poll
             }
         }
 
+        private void LoadDemographics()
+        {
+            XmlDocument xd = new XmlDocument();
+            xd.Load(ConfigFileName);
+            XmlNodeList DemographicNodeList = xd.SelectNodes("/configuration/demographics/demographic");
+            foreach (XmlNode DemographicNode in DemographicNodeList)
+            {
+
+            }
+        }
+
+
         private void LoadGUI()
         {
             foreach (Post p in post)
