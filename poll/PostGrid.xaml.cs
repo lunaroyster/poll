@@ -23,6 +23,8 @@ namespace poll
         int width = MainWindow.ButtonWidth;
         int height = MainWindow.ButtonHeight;
         int margin = MainWindow.ButtonMargin;
+        //public event EventHandler PostButtonClick;
+        //public delegate void 
         public PostGrid()
         {
             InitializeComponent();
@@ -38,6 +40,7 @@ namespace poll
                 pb.Width = width;
                 pb.Margin = new Thickness(margin);
                 pb.Content = c.Name;
+                
                 CandidateWrapPanel.Children.Add(pb);
             }
         }

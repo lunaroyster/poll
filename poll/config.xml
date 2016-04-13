@@ -21,4 +21,10 @@
         </post>
     </profile>
 
+    <demograhics>
+        <demographic name="">
+            <description></description>
+        </demographic>
+    </demograhics>
+    
 </configuration>
