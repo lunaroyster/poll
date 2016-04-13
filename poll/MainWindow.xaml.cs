@@ -34,6 +34,7 @@ namespace poll
             public static int ButtonMargin = 5;
             public static int ButtonHeight = 600;
             public int WrapButtonCount = 2;
+            public string ConfigFileName;
         #endregion
 
         public MainWindow()
@@ -43,21 +44,29 @@ namespace poll
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
-            LoadConfig();
+            SetXmlFile();
+            LoadProfile();
             LoadGUI();
         }
 
-        private void LoadConfig()
+        private void SetXmlFile()
         {
+            //TODO Error Checking/file ennumeration
             OpenFileDialog fd = new OpenFileDialog();
             fd.DefaultExt = ".xml";
             fd.InitialDirectory = Directory.GetCurrentDirectory();
             fd.Filter = "XML files (.xml)|*.xml";
             fd.Multiselect = false;
             bool? result = fd.ShowDialog();
+            ConfigFileName = fd.FileName;
             if (result == false || result == null) { fd.FileName = "D:\\xTemp\\XMLFile1.xml"; }
+        }
+
+        private void LoadProfile()
+        {
+            
             XmlDocument xd = new XmlDocument();
-            xd.Load(fd.FileName);
+            xd.Load(ConfigFileName);
             XmlNodeList PostNodeList = xd.SelectNodes("/configuration/profile/post");
             foreach (XmlNode postNode in PostNodeList)
             {
