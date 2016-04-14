@@ -32,7 +32,7 @@ namespace poll
             List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
-            public static int ButtonHeight = 600;
+            public static int ButtonHeight = 128;
             public int WrapButtonCount = 2;
             public string ConfigFileName;
         #endregion
