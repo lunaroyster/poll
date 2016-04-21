@@ -122,6 +122,7 @@ namespace poll
                 PostStackPanel.Children.Add(pg);
                 pg.CandidateWrapPanel.Width = WrapButtonCount * (ButtonWidth + 2 * ButtonMargin);
                 pg.Margin = new Thickness(ButtonMargin);
+                pg.PostID = p.PostID;
                 pg.LoadOptions(p);
             }
         }

@@ -24,13 +24,13 @@ namespace poll
         int height = MainWindow.ButtonHeight;
         int margin = MainWindow.ButtonMargin;
         int selectedCandidate;
-
+        public int PostID;
 
         private void SelectCandidate(object sender, RoutedEventArgs e)
         {
             PostButton pb = (PostButton)sender;
             selectedCandidate = pb.CandidateID;
-            MessageBox.Show(pb.CandidateID.ToString());
+            MessageBox.Show((pb.CandidateID + PostID).ToString());
         }
 
         public PostGrid()

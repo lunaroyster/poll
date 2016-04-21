@@ -13,8 +13,7 @@ namespace poll
     class PostButton : Button
     {
         private bool active;
-        public int PostID { get; set; }
-        public int CandidateID { get; set; }
+        public int CandidateID;
         //public Post.Candidate LinkedCandidateObject { }
 
         public PostButton()
