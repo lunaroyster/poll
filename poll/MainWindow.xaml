@@ -17,7 +17,7 @@
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="24*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="386" BorderBrush="White" Background="#FF3F3F46" Foreground="White" Grid.ColumnSpan="2"/>
+            <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="386" BorderBrush="White" Background="#FF3F3F46" Foreground="White" Grid.ColumnSpan="2" FontSize="24" FontFamily="Segoe UI Light" Click="VoteButton_Click"/>
         </Grid>
         <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"/>
 

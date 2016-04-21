@@ -29,12 +29,19 @@ namespace poll
     {
 
         #region Declarations
+
             List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
             public static int ButtonHeight = 128;
             public int WrapButtonCount = 2;
             public string ConfigFileName;
+
+            public static Brush PrimaryBrush;
+            public static Brush HighlightBrush;
+            public static Brush PrimaryTextBrush;
+            public static Brush HighlightTextBrush;
+
         #endregion
 
         public MainWindow()
@@ -44,9 +51,16 @@ namespace poll
 
         private void Window_ContentRendered(object sender, EventArgs e)
         {
+            SetColorVariables();
             SetXmlFile();
             LoadProfile();
             LoadGUI();
+        }
+
+        private void SetColorVariables()
+        {
+            PrimaryBrush = Background;
+
         }
 
         private void SetXmlFile()
@@ -128,5 +142,9 @@ namespace poll
             //post[postID].cand[candidateID].
         }
 
+        private void VoteButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -14,55 +14,19 @@ namespace poll
         private bool active;
         public int PostID { get; set; }
         public int CandidateID { get; set; }
-        private Brush activeBrush;
-        private Brush defaultBrush;
         //public Post.Candidate LinkedCandidateObject { }
 
         public PostButton()
         {
-            defaultBrush = Background;
-        }
-
-        private void UpdateActivation()
-        {
-            if (active)
-            {
-                Background = activeBrush;
-            }
-            else
-            {
-                Background = defaultBrush;
-            }
-        }
-
-        public Brush ActiveBackground
-        {
-            get
-            {
-                return activeBrush;
-            }
-            set
-            {
-                activeBrush = value;
-            }
-        }
-        
-        public bool IsActive
-        {
-            get
-            {
-                return active;
-            }
-            set
-            {
-                active = value;
-                UpdateActivation();
-            }
+            Background = MainWindow.PrimaryBrush;
         }
 
         protected override void OnClick()
         {
-            IsActive = !IsActive;
+            active = !active;
+            Background = active ? MainWindow.HighlightBrush : MainWindow.PrimaryBrush;
         }
+
+
     }
 }
