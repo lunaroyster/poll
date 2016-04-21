@@ -82,17 +82,23 @@ namespace poll
             XmlDocument xd = new XmlDocument();
             xd.Load(ConfigFileName);
             XmlNodeList PostNodeList = xd.SelectNodes("/configuration/profile/post");
+            int i = 0;
             foreach (XmlNode postNode in PostNodeList)
             {
                 string PostName = postNode.Attributes.GetNamedItem("name").Value;
                 Post p = new Post(PostName);
+                p.PostID = i;
+                int j = 0;
                 foreach (XmlNode candidateNode in postNode.ChildNodes)
                 {
                     string CandidateName = candidateNode.Attributes.GetNamedItem("name").Value;
                     Post.Candidate c = new Post.Candidate(CandidateName);
+                    c.CandidateID = j;
                     p.cand.Add(c);
+                    j++;
                 }
                 post.Add(p);
+                i++;
             }
         }
 

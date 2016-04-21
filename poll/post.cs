@@ -8,6 +8,7 @@ namespace poll
 {
     public class Post
     {
+        public int PostID;
         public bool isInitialized;
         string PostName;
         
@@ -47,6 +48,7 @@ namespace poll
             string CandidateName;
             string description;
             string imageURL;
+            public int CandidateID;
             public bool isInitialized;
             public string Name
             {
@@ -71,6 +73,7 @@ namespace poll
             public List<Demographic> Demo = new List<Demographic>();
             public struct Demographic
             {
+                public int DemographicID;
                 string DemographicName;
                 int VoteCount;
             }

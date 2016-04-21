@@ -48,6 +48,7 @@ namespace poll
                 pb.Width = width;
                 pb.Margin = new Thickness(margin);
                 pb.Content = c.Name;
+                pb.CandidateID = c.CandidateID;
                 pb.Click += SelectCandidate;
                 CandidateWrapPanel.Children.Add(pb);
             }
