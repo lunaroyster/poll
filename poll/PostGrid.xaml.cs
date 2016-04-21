@@ -23,8 +23,16 @@ namespace poll
         int width = MainWindow.ButtonWidth;
         int height = MainWindow.ButtonHeight;
         int margin = MainWindow.ButtonMargin;
-        //public event EventHandler PostButtonClick;
-        //public delegate void 
+        int selectedCandidate;
+
+
+        private void SelectCandidate(object sender, RoutedEventArgs e)
+        {
+            PostButton pb = (PostButton)sender;
+            selectedCandidate = pb.CandidateID;
+            MessageBox.Show(pb.CandidateID.ToString());
+        }
+
         public PostGrid()
         {
             InitializeComponent();
@@ -40,9 +48,10 @@ namespace poll
                 pb.Width = width;
                 pb.Margin = new Thickness(margin);
                 pb.Content = c.Name;
-                
+                pb.Click += SelectCandidate;
                 CandidateWrapPanel.Children.Add(pb);
             }
         }
+       
     }
 }

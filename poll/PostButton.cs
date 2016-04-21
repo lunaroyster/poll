@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace poll
@@ -21,12 +22,11 @@ namespace poll
             Background = MainWindow.PrimaryBrush;
         }
 
-        protected override void OnClick()
-        {
-            active = !active;
-            Background = active ? MainWindow.HighlightBrush : MainWindow.PrimaryBrush;
-        }
-
-
+        //protected override void OnClick()
+        //{
+        //    active = !active;
+        //    Background = active ? MainWindow.HighlightBrush : MainWindow.PrimaryBrush;
+        //}
+        
     }
 }

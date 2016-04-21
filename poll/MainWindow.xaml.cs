@@ -38,7 +38,7 @@ namespace poll
             public string ConfigFileName;
 
             public static Brush PrimaryBrush;
-            public static Brush HighlightBrush;
+            public static Brush HighlightBrush = Brushes.White;
             public static Brush PrimaryTextBrush;
             public static Brush HighlightTextBrush;
 
