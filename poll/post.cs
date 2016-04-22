@@ -70,7 +70,7 @@ namespace poll
             public int VoteCount; //Change with demographic system
 
 
-            public List<Demographic> Demo = new List<Demographic>();
+            public List<Demographic> demo = new List<Demographic>();
             public class Demographic
             {
                 string DemographicName;

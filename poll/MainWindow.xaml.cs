@@ -30,7 +30,7 @@ namespace poll
 
         #region Declarations
 
-            List<Post> post = new List<Post>();
+            public static List<Post> post = new List<Post>();
             public static int ButtonWidth = 128;
             public static int ButtonMargin = 5;
             public static int ButtonHeight = 128;
@@ -54,6 +54,7 @@ namespace poll
             SetColorVariables();
             SetXmlFile();
             LoadProfile();
+            LoadDemographics();
             LoadGUI();
         }
 
@@ -113,6 +114,13 @@ namespace poll
                 string DemographicName = DemographicNode.Attributes.GetNamedItem("name").Value;
                 Post.Candidate.Demographic d = new Post.Candidate.Demographic(DemographicName);
                 d.DemographicID = i;
+                foreach (Post p in post)
+                {
+                    foreach (Post.Candidate c in p.cand)
+                    {
+                        c.demo.Add(d);
+                    }
+                }
             }
         }
 
