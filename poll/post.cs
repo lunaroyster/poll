@@ -71,11 +71,30 @@ namespace poll
 
 
             public List<Demographic> Demo = new List<Demographic>();
-            public struct Demographic
+            public class Demographic
             {
-                public int DemographicID;
                 string DemographicName;
+                public int DemographicID;
                 int VoteCount;
+
+
+                public Demographic(string name)
+                {
+                    Name = name;
+                }
+
+                public string Name
+                {
+                    get
+                    {
+                        return DemographicName != null ? DemographicName : "Unnamed";
+                    }
+                    set
+                    {
+                        DemographicName = value;
+                    }
+                }
+
             }
 
         }

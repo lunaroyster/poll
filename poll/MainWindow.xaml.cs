@@ -107,9 +107,12 @@ namespace poll
             XmlDocument xd = new XmlDocument();
             xd.Load(ConfigFileName);
             XmlNodeList DemographicNodeList = xd.SelectNodes("/configuration/demographics/demographic");
+            int i = 0;
             foreach (XmlNode DemographicNode in DemographicNodeList)
             {
-
+                string DemographicName = DemographicNode.Attributes.GetNamedItem("name").Value;
+                Post.Candidate.Demographic d = new Post.Candidate.Demographic(DemographicName);
+                d.DemographicID = i;
             }
         }
 
