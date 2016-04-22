@@ -39,7 +39,7 @@ namespace poll
 
             public static Brush PrimaryBrush;
             public static Brush HighlightBrush = Brushes.White;
-            public static Brush PrimaryTextBrush;
+            public static Brush PrimaryTextBrush = Brushes.White;
             public static Brush HighlightTextBrush;
 
         #endregion

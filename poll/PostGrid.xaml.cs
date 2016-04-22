@@ -28,9 +28,14 @@ namespace poll
 
         private void SelectCandidate(object sender, RoutedEventArgs e)
         {
-            PostButton pb = (PostButton)sender;
-            selectedCandidate = pb.CandidateID;
-            MessageBox.Show((pb.CandidateID + PostID).ToString());
+            PostButton postbutton = (PostButton)sender;
+            selectedCandidate = postbutton.CandidateID;
+            foreach (PostButton pb in CandidateWrapPanel.Children)
+            {
+                pb.Background = MainWindow.PrimaryBrush;
+            }
+            postbutton.Background = MainWindow.HighlightBrush;
+            //MessageBox.Show((postbutton.CandidateID + PostID).ToString());
         }
 
         public PostGrid()

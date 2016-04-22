@@ -19,6 +19,7 @@ namespace poll
         public PostButton()
         {
             Background = MainWindow.PrimaryBrush;
+            Foreground = MainWindow.PrimaryTextBrush;
         }
 
         //protected override void OnClick()
