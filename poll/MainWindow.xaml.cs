@@ -157,12 +157,19 @@ namespace poll
 
         private void cast(int postID, int candidateID, int demographicID)
         {
-            //post[postID].cand[candidateID].
+            //post[postID].cand[candidateID].demo[demographicID].
         }
 
         private void VoteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            int SelectedDemographic; //TODO Select this.
+            foreach (PostGrid p in PostStackPanel.Children)
+            {
+                int SelectedCandidate;
+                int CurrentPost = p.PostID;
+                SelectedCandidate = p.selectedCandidate;
+                cast(CurrentPost, SelectedCandidate, SelectedDemographic);
+            }
         }
     }
 }

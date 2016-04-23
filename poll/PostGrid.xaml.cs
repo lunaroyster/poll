@@ -23,7 +23,7 @@ namespace poll
         int width = MainWindow.ButtonWidth;
         int height = MainWindow.ButtonHeight;
         int margin = MainWindow.ButtonMargin;
-        int selectedCandidate;
+        public int selectedCandidate;
         public int PostID;
 
         private void SelectCandidate(object sender, RoutedEventArgs e)
