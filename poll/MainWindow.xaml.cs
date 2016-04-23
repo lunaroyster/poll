@@ -162,19 +162,22 @@ namespace poll
 
         private void VoteButton_Click(object sender, RoutedEventArgs e)
         {
-            int SelectedDemographic; //TODO Select this.
+            int SelectedDemographic = 666; //TODO Select this.
             foreach (PostGrid p in PostStackPanel.Children)
             {
                 int SelectedCandidate;
                 int CurrentPost = p.PostID;
-                SelectedCandidate = p.selectedCandidate;
+                SelectedCandidate = (int)p.selectedCandidate; //TODO Check if nullable int is not null
                 cast(CurrentPost, SelectedCandidate, SelectedDemographic);
             }
         }
 
         private void Reset()
         {
-            
+            foreach (PostGrid p in PostStackPanel.Children)
+            {
+                p.Reset();
+            }
         }
 
 

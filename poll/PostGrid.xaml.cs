@@ -35,10 +35,10 @@ namespace poll
                 pb.Background = MainWindow.PrimaryBrush;
             }
             postbutton.Background = MainWindow.HighlightBrush;
-            foreach (Post.Candidate.Demographic d in MainWindow.post[PostID].cand[selectedCandidate].demo)
-            {
-                MessageBox.Show(d.Name);
-            }
+            //foreach (Post.Candidate.Demographic d in MainWindow.post[PostID].cand[(int)selectedCandidate].demo) 
+            //{
+            //    MessageBox.Show(d.Name);
+            //}
             //MessageBox.Show((postbutton.CandidateID + PostID).ToString());
         }
 
