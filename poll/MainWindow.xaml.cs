@@ -171,5 +171,12 @@ namespace poll
                 cast(CurrentPost, SelectedCandidate, SelectedDemographic);
             }
         }
+
+        private void Reset()
+        {
+            
+        }
+
+
     }
 }

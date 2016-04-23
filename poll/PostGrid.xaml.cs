@@ -23,7 +23,7 @@ namespace poll
         int width = MainWindow.ButtonWidth;
         int height = MainWindow.ButtonHeight;
         int margin = MainWindow.ButtonMargin;
-        public int selectedCandidate;
+        public int? selectedCandidate;
         public int PostID;
 
         private void SelectCandidate(object sender, RoutedEventArgs e)
@@ -62,6 +62,16 @@ namespace poll
                 CandidateWrapPanel.Children.Add(pb);
             }
         }
-       
+
+        public void Reset()
+        {
+            foreach (PostButton pb in CandidateWrapPanel.Children)
+            {
+                pb.Background = MainWindow.PrimaryBrush; 
+            }
+            selectedCandidate = null;
+        }
+
+
     }
 }
