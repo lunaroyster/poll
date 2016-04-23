@@ -6,20 +6,20 @@
         xmlns:local="clr-namespace:poll"
         mc:Ignorable="d"
         Title="MainWindow" Background="#FF3F3F46" BorderBrush="#FF3F3F46" Foreground="White" WindowStyle="None" WindowState="Maximized" Width="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenWidthKey}}" Height="{DynamicResource {x:Static SystemParameters.FullPrimaryScreenHeightKey}}" ContentRendered="Window_ContentRendered">
-    <Grid x:Name="maingrid" Margin="0,0,2,2">
+    <Grid x:Name="maingrid" Margin="0">
         <Grid.RowDefinitions>
             <RowDefinition Height="43*"/>
-            <RowDefinition Height="558*"/>
-            <RowDefinition Height="95*"/>
+            <RowDefinition Height="552*"/>
+            <RowDefinition Height="100*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="2" HorizontalAlignment="Right" Width="406">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="79*"/>
                 <ColumnDefinition Width="24*"/>
             </Grid.ColumnDefinitions>
-            <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Height="75" Margin="10,10,0,0" VerticalAlignment="Top" Width="386" BorderBrush="White" Background="#FF3F3F46" Foreground="White" Grid.ColumnSpan="2" FontSize="24" FontFamily="Segoe UI Light" Click="VoteButton_Click"/>
+            <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Margin="10,10,0,10" Width="386" BorderBrush="White" Background="#FF3F3F46" Foreground="White" Grid.ColumnSpan="2" FontSize="24" FontFamily="Segoe UI Light" Click="VoteButton_Click"/>
         </Grid>
-        <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"/>
+        <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" Height="0"/>
 
 
     </Grid>
