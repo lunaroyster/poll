@@ -70,11 +70,12 @@ namespace poll
             OpenFileDialog fd = new OpenFileDialog();
             fd.DefaultExt = ".xml";
             fd.InitialDirectory = Directory.GetCurrentDirectory();
+            fd.Title = "Select a config file";
             fd.Filter = "XML files (.xml)|*.xml";
             fd.Multiselect = false;
             bool? result = fd.ShowDialog();
             ConfigFileName = fd.FileName;
-            if (result == false || result == null) { fd.FileName = "D:\\xTemp\\XMLFile1.xml"; }
+            if (result == false || result == null) { fd.FileName = "D:\\xTemp\\XMLFile1.xml"; } //TODO Temporary. Remove.
         }
 
         private void LoadProfile()
@@ -112,12 +113,13 @@ namespace poll
             foreach (XmlNode DemographicNode in DemographicNodeList)
             {
                 string DemographicName = DemographicNode.Attributes.GetNamedItem("name").Value;
-                Post.Candidate.Demographic d = new Post.Candidate.Demographic(DemographicName);
-                d.DemographicID = i;
                 foreach (Post p in post)
                 {
                     foreach (Post.Candidate c in p.cand)
                     {
+                        Post.Candidate.Demographic d;
+                        d = new Post.Candidate.Demographic(DemographicName);
+                        d.DemographicID = i;
                         c.demo.Add(d);
                     }
                 }
@@ -154,15 +156,18 @@ namespace poll
             return DateTime.Now.ToLongTimeString();
         }
         
-
         private void cast(int postID, int candidateID, int demographicID)
         {
-            //post[postID].cand[candidateID].demo[demographicID].
+            //TODO Clean up debug
+            post[postID].cand[candidateID].demo[demographicID].Vote();
+            string test = post[postID].Name + post[postID].cand[candidateID].Name + post[postID].cand[candidateID].demo[demographicID].Name + post[postID].cand[candidateID].demo[demographicID].VoteCount;
+            MessageBox.Show(test);
+            MessageBox.Show(postID.ToString() + candidateID.ToString() + demographicID.ToString() + post[postID].cand[candidateID].demo[demographicID].test);
         }
 
         private void VoteButton_Click(object sender, RoutedEventArgs e)
         {
-            int SelectedDemographic = 666; //TODO Select this.
+            int SelectedDemographic = 0; //TODO Select this.
             foreach (PostGrid p in PostStackPanel.Children)
             {
                 int SelectedCandidate;
