@@ -60,6 +60,7 @@ namespace poll
                 pb.CandidateID = c.CandidateID;
                 pb.Click += SelectCandidate;
                 CandidateWrapPanel.Children.Add(pb);
+                Console.WriteLine("loaded " + c.Name);
             }
         }
 
