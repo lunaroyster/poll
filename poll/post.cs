@@ -19,10 +19,6 @@ namespace poll
             Name = name;
             isInitialized = true;
         }
-        public void Vote(int CandidateNumber)
-        {
-            
-        }
 
         public string Name
         {
@@ -67,7 +63,7 @@ namespace poll
                 isInitialized = true;
                 Name = name;
             }
-            public int VoteCount; //Change with demographic system
+            public int VoteCount; 
 
 
             public List<Demographic> demo = new List<Demographic>();
@@ -75,8 +71,8 @@ namespace poll
             {
                 string DemographicName;
                 public int DemographicID;
-                int VoteCount;
-
+                public int VoteCount;
+                public string test = new Random().NextDouble().ToString();
 
                 public Demographic(string name)
                 {
@@ -94,6 +90,12 @@ namespace poll
                         DemographicName = value;
                     }
                 }
+
+                public void Vote()
+                {
+                    VoteCount++;
+                }
+
 
             }
 
