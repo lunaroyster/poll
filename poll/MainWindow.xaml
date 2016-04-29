@@ -19,7 +19,7 @@
             </Grid.ColumnDefinitions>
             <Button x:Name="VoteButton" Content="Vote" HorizontalAlignment="Left" Margin="10,10,0,10" Width="386" BorderBrush="White" Background="#FF3F3F46" Foreground="White" Grid.ColumnSpan="2" FontSize="24" FontFamily="Segoe UI Light" Click="VoteButton_Click"/>
         </Grid>
-        <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top" Height="0"/>
+        <StackPanel x:Name="PostStackPanel" Margin="10,10,10,0" Orientation="Horizontal" Grid.Row="1" VerticalAlignment="Top"/>
 
 
     </Grid>
